@@ -5,3 +5,4 @@ node_modules
 coverage
 dist
 tsconfig.tsbuildinfo
+tsconfig.typecheck.tsbuildinfo

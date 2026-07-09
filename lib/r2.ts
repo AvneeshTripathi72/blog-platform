@@ -2,7 +2,7 @@ import { randomUUID } from "node:crypto";
 import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
-import { getServerEnv } from "@/lib/env";
+import { getR2Env } from "@/lib/env";
 
 const allowedContentTypes = new Set(["image/jpeg", "image/png", "image/webp", "image/avif"]);
 
@@ -19,7 +19,7 @@ export async function createSignedUploadUrl({
     throw new Error("Unsupported content type.");
   }
 
-  const env = getServerEnv();
+  const env = getR2Env();
   const s3Client = new S3Client({
     region: "auto",
     endpoint: `https://${env.R2_ACCOUNT_ID}.r2.cloudflarestorage.com`,

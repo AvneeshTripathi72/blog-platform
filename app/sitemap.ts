@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
 
+import { getSiteUrl } from "@/lib/env";
 import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 import type { Database } from "@/types/database";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
+  const siteUrl = getSiteUrl();
   const hasSupabaseEnv =
     Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL) && Boolean(process.env.SUPABASE_SERVICE_ROLE_KEY);
 
