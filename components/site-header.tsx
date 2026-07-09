@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Bell, Command, PenSquare, Search, Sparkles } from "lucide-react";
+import { Bell, Command, PenSquare, Search } from "lucide-react";
 
+import { BrandMark } from "@/components/brand-mark";
 import { Button } from "@/components/ui/button";
 
 export function SiteHeader() {
@@ -10,7 +11,7 @@ export function SiteHeader() {
         <div className="surface-strong flex items-center justify-between rounded-[24px] px-4 py-3 shadow-[var(--shadow-soft)]">
           <Link className="flex items-center gap-3 text-lg font-semibold tracking-tight" href="/">
             <span className="flex h-10 w-10 items-center justify-center rounded-[18px] bg-[var(--foreground)] text-white">
-              <Sparkles className="h-5 w-5" />
+              <BrandMark className="h-10 w-10" />
             </span>
             <span className="flex flex-col leading-none">
               <span>Inkspire</span>
