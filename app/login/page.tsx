@@ -1,10 +1,10 @@
-import { signInAction } from "@/actions/auth";
-import { FormSubmitButton } from "@/components/form-submit-button";
 import Link from "next/link";
 
+import { signInAction } from "@/actions/auth";
+import { FormSubmitButton } from "@/components/form-submit-button";
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 
 export default async function LoginPage({
   searchParams
@@ -14,34 +14,44 @@ export default async function LoginPage({
   const params = await searchParams;
 
   return (
-    <main className="mx-auto flex min-h-screen max-w-md items-center px-6 py-16">
-      <Card className="w-full space-y-6">
-        <div className="space-y-2">
-          <p className="text-sm uppercase tracking-[0.24em] text-[var(--muted)]">Welcome back</p>
-          <h1 className="text-3xl font-semibold tracking-[-0.04em]">Sign in to Inkspire</h1>
-        </div>
-        <form action={signInAction} className="space-y-4">
-          <Input name="email" placeholder="Email address" required type="email" />
-          <Input name="password" placeholder="Password" required type="password" />
-          {params.error ? <p className="text-sm text-red-500">{params.error}</p> : null}
-          {params.message ? <p className="text-sm text-emerald-500">{params.message}</p> : null}
-          <FormSubmitButton className="w-full">Sign in</FormSubmitButton>
-        </form>
-        <div className="space-y-4">
-          <Button className="w-full" variant="secondary">
-            Continue with Google
-          </Button>
-          <Button className="w-full" variant="secondary">
-            Continue with GitHub
-          </Button>
-        </div>
-        <p className="text-sm text-[var(--muted)]">
-          No account yet?{" "}
-          <Link className="text-[var(--primary)]" href="/signup">
-            Create one
-          </Link>
-        </p>
-      </Card>
+    <main className="page-shell flex min-h-screen items-center py-10">
+      <div className="grid w-full gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+        <Card className="rounded-[34px] bg-[var(--foreground)] p-8 text-white">
+          <p className="eyebrow text-white/50">Welcome back</p>
+          <h1 className="editorial-title mt-4 text-5xl font-semibold">A sign-in flow that feels like entering a studio.</h1>
+          <div className="mt-8 space-y-4 text-sm leading-7 text-white/72">
+            <p>Resume drafts, review analytics, and return to an environment designed for deliberate publishing.</p>
+            <p>Nothing noisy, nothing generic, just a calmer way to ship ideas.</p>
+          </div>
+        </Card>
+        <Card className="rounded-[34px] p-8 md:p-10">
+          <div className="space-y-2">
+            <p className="eyebrow">Account access</p>
+            <h2 className="text-3xl font-semibold tracking-[-0.04em]">Sign in to Inkspire</h2>
+          </div>
+          <form action={signInAction} className="mt-8 space-y-4">
+            <Input name="email" placeholder="Email address" required type="email" />
+            <Input name="password" placeholder="Password" required type="password" />
+            {params.error ? <p className="text-sm text-[var(--danger)]">{params.error}</p> : null}
+            {params.message ? <p className="text-sm text-[var(--success)]">{params.message}</p> : null}
+            <FormSubmitButton className="w-full">Sign in</FormSubmitButton>
+          </form>
+          <div className="mt-5 grid gap-3">
+            <Button className="w-full" variant="secondary">
+              Continue with Google
+            </Button>
+            <Button className="w-full" variant="secondary">
+              Continue with GitHub
+            </Button>
+          </div>
+          <p className="mt-6 text-sm text-[var(--muted)]">
+            No account yet?{" "}
+            <Link className="font-semibold text-[var(--foreground)] hover:text-[var(--accent)]" href="/signup">
+              Create one
+            </Link>
+          </p>
+        </Card>
+      </div>
     </main>
   );
 }

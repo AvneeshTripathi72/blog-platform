@@ -5,10 +5,14 @@ export default function TermsPage() {
   return (
     <div className="min-h-screen">
       <SiteHeader />
-      <main className="mx-auto max-w-4xl px-6 py-16">
-        <Card className="space-y-4">
-          <h1 className="text-4xl font-semibold tracking-[-0.05em]">Terms</h1>
-          <p className="text-[var(--muted)]">Terms of service content will be finalized before launch. This placeholder route prevents broken navigation during deployment.</p>
+      <main className="page-shell py-10">
+        <Card className="rounded-[34px] space-y-4 p-8">
+          <p className="eyebrow">Terms</p>
+          <h1 className="editorial-title text-4xl font-semibold tracking-[-0.05em]">Terms content will be published before launch.</h1>
+          <p className="max-w-2xl text-sm leading-7 text-[var(--muted)]">
+            The legal copy is still being finalized, but the page is designed to feel complete and consistent in the
+            meantime.
+          </p>
         </Card>
       </main>
     </div>
