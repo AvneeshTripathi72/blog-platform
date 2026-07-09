@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f3f5f8;
+  --foreground: #111827;
+  --card: rgba(255, 255, 255, 0.72);
+  --card-foreground: #111827;
+  --border: rgba(17, 24, 39, 0.1);
+  --muted: #6b7280;
+  --primary: #0f766e;
+  --primary-foreground: #f8fafc;
+  --secondary: #dbeafe;
+  --accent: #fef3c7;
+  --ring: rgba(15, 118, 110, 0.35);
+}
+
+.dark {
+  --background: #07111f;
+  --foreground: #e5eef8;
+  --card: rgba(15, 23, 42, 0.68);
+  --card-foreground: #e5eef8;
+  --border: rgba(229, 238, 248, 0.1);
+  --muted: #94a3b8;
+  --primary: #2dd4bf;
+  --primary-foreground: #042f2e;
+  --secondary: #172554;
+  --accent: #1f2937;
+  --ring: rgba(45, 212, 191, 0.35);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(45, 212, 191, 0.16), transparent 32%),
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.12), transparent 28%),
+    linear-gradient(180deg, var(--background), color-mix(in oklab, var(--background), black 4%));
+  color: var(--foreground);
+  min-height: 100vh;
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.surface {
+  background: var(--card);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+}
+
+.prose-shell h1,
+.prose-shell h2,
+.prose-shell h3,
+.prose-shell h4 {
+  font-family: "Times New Roman", Georgia, serif;
+  letter-spacing: -0.03em;
+}
