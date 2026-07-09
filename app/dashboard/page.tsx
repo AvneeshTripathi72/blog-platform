@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { BarChart3, BookMarked, MessageSquareMore, PenSquare, Users } from "lucide-react";
 
 import { Card } from "@/components/ui/card";

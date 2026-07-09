@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { createDraftAction } from "@/actions/blogs";
 import { FormSubmitButton } from "@/components/form-submit-button";
 import { SiteHeader } from "@/components/site-header";
