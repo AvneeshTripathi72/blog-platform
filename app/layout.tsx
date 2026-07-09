@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope, Source_Serif_4 } from "next/font/google";
+import Script from "next/script";
 
 import { Providers } from "@/components/providers";
 import "@/app/globals.css";
@@ -27,6 +28,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${sans.variable} ${serif.variable}`}>
+        <Script
+          async
+          crossOrigin="anonymous"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5307366109562561"
+          strategy="afterInteractive"
+        />
         <Providers>{children}</Providers>
       </body>
     </html>
